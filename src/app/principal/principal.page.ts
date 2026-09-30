@@ -24,14 +24,24 @@ export class PrincipalPage {
         genero: ['', Validators.required ],
         dataNascimento: ['', Validators.compose([ Validators.required ]) ],
         email: ['', Validators.compose([ Validators.required, Validators.email ])],
-        senha: ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12), Validacoes.senhasCombinam('senha')])  ],
-        senhaConfirm: ['', ],
+        senha: ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12), Validacoes.senhasCombinam('senhaConfirm', true)])  ],
+        senhaConfirm: ['', Validators.compose([
+                            Validators.required, Validators.minLength(6), Validators.maxLength(12),
+                          Validacoes.senhasCombinam('senha')]) ],
       }),
       etapaDois: this.formBuilder.group({
-        rua: ['', ],
-        numero: ['0', ],
-        complemento: ['', ],
-        bairro: ['', ],
+        rua: ['', Validators.compose([
+                    Validators.required, Validators.minLength(3), Validators.maxLength(250)
+        ]) ],
+        numero: ['0', Validators.compose([
+                        Validators.required, Validators.minLength(1)
+        ]) ],
+        complemento: ['', Validators.compose([
+                            Validators.required, Validators.minLength(3), Validators.maxLength(250)
+        ]) ],
+        bairro: ['', Validators.compose([
+
+        ]) ],
         cep: ['', ],
         cidade: ['', ],
         uf: ['', ],
