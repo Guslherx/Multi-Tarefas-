@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Validacoes } from '../utils/validacoes'; 
+import { Validacoes } from '../utils/validacoes';
 
 @Component({
   selector: 'app-home',
@@ -13,13 +13,18 @@ export class PrincipalPage {
   constructor(private formBuilder: FormBuilder) {
     this.multiForm = this.formBuilder.group({
       etapaUm: this.formBuilder.group({
-        nome: ['', ],
-        sobrenome: ['', ],
-        cpf: ['', ],
-        genero: ['',  ],
-        dataNascimento: [new Date().toJSON(), ],
-        email: ['', ],
-        senha: ['', ],
+        nome: ['', Validators.compose([
+                    Validators.required,Validators.minLength(3), Validators.maxLength(100)])],
+        sobrenome: ['', Validators.compose([
+                          Validators.required,Validators.minLength(3), Validators.maxLength(30)]) ],
+        cpf: ['', Validators.compose([
+                    Validators.required,Validators.minLength(11), Validators.maxLength(11),
+                  Validacoes.validaCpf
+                ]) ],
+        genero: ['', Validators.required ],
+        dataNascimento: ['', Validators.compose([ Validators.required ]) ],
+        email: ['', Validators.compose([ Validators.required, Validators.email ])],
+        senha: ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12), Validacoes.senhasCombinam('senha')])  ],
         senhaConfirm: ['', ],
       }),
       etapaDois: this.formBuilder.group({
