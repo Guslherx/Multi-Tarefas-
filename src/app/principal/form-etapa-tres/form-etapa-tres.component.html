@@ -1,5 +1,3 @@
-
-
 <ion-card-title class="ion-text-center">
     <h3>{{etapa}}</h3>
 </ion-card-title>
@@ -11,9 +9,7 @@
         <ion-input aria-label="curso" type="text" id="curso" name="curso" formControlName="curso"></ion-input>
 
         <ion-text color="danger"
-            *ngIf="(formTres.get('curso')?.errors?.['required'] || formTres.get('curso')?.errors?.['minlength'] || formTres.get('curso')?.errors?.['maxlength']) && formTres.get('curso')?.touched"
-
-        >
+            *ngIf="(formTres.get('curso')?.errors?.['required'] || formTres.get('curso')?.errors?.['minlength'] || formTres.get('curso')?.errors?.['maxlength']) && formTres.get('curso')?.touched">
             Informe o curso!
         </ion-text>
     </ion-item>
@@ -32,9 +28,7 @@
 
 
         <ion-text color="danger"
-            *ngIf="(formTres.get('nivel')?.errors?.['required']) && formTres.get('nivel')?.touched"
-
-        >
+            *ngIf="(formTres.get('nivel')?.errors?.['required']) && formTres.get('nivel')?.touched">
             Selecione o nível!
         </ion-text>
     </ion-item>
@@ -43,24 +37,22 @@
 
     <ion-item>
         <ion-label position="floating">Profissão</ion-label>
-        <ion-input aria-label="profissao" type="text" id="profissao" name="profissao" formControlName="profissao"></ion-input>
+        <ion-input aria-label="profissao" type="text" id="profissao" name="profissao"
+            formControlName="profissao"></ion-input>
 
         <ion-text color="danger"
-            *ngIf="(formTres.get('profissao')?.errors?.['required'] || formTres.get('profissao')?.errors?.['minlength'] || formTres.get('profissao')?.errors?.['maxlength']) && formTres.get('profissao')?.touched"
-
-        >
+            *ngIf="(formTres.get('profissao')?.errors?.['required'] || formTres.get('profissao')?.errors?.['minlength'] || formTres.get('profissao')?.errors?.['maxlength']) && formTres.get('profissao')?.touched">
             Informe a profissão!
         </ion-text>
     </ion-item>
 
     <ion-item>
         <ion-label position="floating">Tempo de experiência</ion-label>
-        <ion-input aria-label="tempoExperiencia" type="number" id="tempoExperiencia" name="tempoExperiencia" formControlName="tempoExperiencia"></ion-input>
+        <ion-input aria-label="tempoExperiencia" type="number" id="tempoExperiencia" name="tempoExperiencia"
+            formControlName="tempoExperiencia"></ion-input>
 
         <ion-text color="danger"
-            *ngIf="(formTres.get('tempoExperiencia')?.errors?.['required'] || formTres.get('tempoExperiencia')?.errors?.['min']) && formTres.get('tempoExperiencia')?.touched"
-
-        >
+            *ngIf="(formTres.get('tempoExperiencia')?.errors?.['required'] || formTres.get('tempoExperiencia')?.errors?.['min']) && formTres.get('tempoExperiencia')?.touched">
             Digite o tempo de experiência!
         </ion-text>
     </ion-item>
@@ -85,9 +77,3 @@
         </ion-col>
     </ion-row>
 </ion-grid>
-
-
-
-
-
-
